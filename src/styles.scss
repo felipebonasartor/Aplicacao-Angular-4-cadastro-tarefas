@@ -1,0 +1,66 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  padding: 6px 0px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+  background-color: #76f976 !important;
+  border-color:  #76f976 !important;
+}
+
+.text-filter {
+  border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #76f976;
+}
+
+.page-background {
+  background-color: #f3f3f3;
+}
+
+.row-list-task {
+  font-size: 16px;
+  border-bottom: solid 1px #d6d6d6;
+  padding-top: 15px;
+  width: 95%;
+}
+
+.position-actions-list {
+  position: relative;
+  margin-top: -32px;
+}
+
+.action-edit {
+  color: #76f976;
+}
+
+.action-remove {
+  color: red;
+  cursor: pointer;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: #76f976 !important;
+  border-color: #76f976 !important;
+  color: black!important;
+}
+
+.pagination > li > a {  
+   color: #76f976 !important;
+  // background-color: #76f976 !important;
+  // border-color: #76f976 !important;
+}

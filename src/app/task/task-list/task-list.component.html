@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="jumbotron page-background">
+        <div class="pull-right">
+            <button [routerLink]="['/task/editor']" type="button" class="btn btn-success btn-circle">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <div class="text-center">
+            <input (keyup)="filter = $event.target.value" class="form-control text-filter" placeholder="Filtrar pela descrição">
+            <br>
+            <div *ngFor="let task of pagedItems | taskFilterDescription: filter">
+                <div class="text-left row-list-task">
+                    {{task.description}}
+                </div>
+                <span class="pull-right position-actions-list">
+                    <a [routerLink]="['/task/editor']" [queryParams]="{taskId: task.id}">
+                        <i class="fa fa-pencil-square-o fa-2x action-edit" aria-hidden="true"></i>
+                    </a>
+                    <i class="fa fa-times fa-2x action-remove" (click)="removeTask(task.id)" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">
+                        <i class="fa fa-backward" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">
+                        <i class="fa fa-play fa-rotate-180" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">
+                        <i class="fa fa-forward" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
